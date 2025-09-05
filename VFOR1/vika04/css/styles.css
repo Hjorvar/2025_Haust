@@ -1,0 +1,81 @@
+/* --- Grunnstílar og letur (Element Selectors) --- */
+/* Hér notum við 'element selector' til að stilla grunnútlit fyrir alla síðuna.
+    Þetta hefur lægstan forgang (specificity) og verður yfirskrifað af class eða ID.
+    [cite: 615, 682]
+*/
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Font 'stack' sem tryggir læsilegt letur [cite: 737] */
+    background-color: #f4f1ea; /* Ljós, hlýr bakgrunnslitur, minnir á kaffi latte */
+    color: #4a4a4a; /* Dökkgrár textalitur fyrir góðan lestur [cite: 728] */
+    line-height: 1.6; /* Eykur bil á milli lína fyrir betri læsileika */
+}
+
+h1, h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Annað letur fyrir fyrirsagnir til að skapa andstæðu [cite: 746] */
+}
+
+
+/* --- Stílar fyrir sérstaka hluta (Class & ID Selectors) --- */
+
+/* Class selector (.main-title) er endurnýtanlegur og hefur hærri forgang en 'element selector' (h1).
+    [cite: 628, 681]
+*/
+.main-title {
+    color: #6F4E37; /* Dökkur kaffibrúnn litur */
+    text-align: center; /* Miðjusetur textann [cite: 766] */
+}
+
+.section-title {
+    color: #8B4513; /* Annar brúnn tónn (SaddleBrown) */
+    border-bottom: 2px solid #dcdcdc; /* Lágstemmd lína undir til að aðgreina kafla */
+    padding-bottom: 5px; /* Smá bil á milli texta og línu */
+}
+
+/*
+    ID selector (#intro-paragraph) er einstakur og hefur hæsta forganginn.
+    Hann yfirskrifar stíla frá bæði 'p' og hugsanlegum 'class' veljurum.
+    [cite: 647, 680]
+*/
+#intro-paragraph {
+    font-size: 1.1em; /* Örlítið stærra letur til að draga athygli */
+    font-style: italic; /* Skáletraður texti */
+}
+
+
+/* --- Stílar fyrir valmynd (Navigation) --- */
+
+nav ul {
+    list-style-type: none; /* Fjarlægir punkta af listanum */
+    text-align: center;
+    padding: 0;
+}
+
+nav li {
+    display: inline; /* Raðar listaatriðum í lárétta röð */
+    margin: 0 15px; /* Bil á milli atriða */
+}
+
+nav a {
+    text-decoration: none; /* Fjarlægir undirstrikun af hlekkjum [cite: 780] */
+    color: #6F4E37;
+    font-weight: bold; /* Gerir letrið feitt [cite: 759] */
+}
+
+
+/* --- Einfaldir töflustílar --- */
+.history-table {
+    width: 100%; /* Taflan tekur allt tiltækt pláss */
+    border-collapse: collapse; /* Fellir saman ramma á hólfum */
+    margin-top: 20px;
+}
+
+.history-table th, .history-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.history-table th {
+    background-color: #8B4513; /* Dökkur bakgrunnur fyrir hausinn */
+    color: white; /* Hvítur texti */
+}
