@@ -28,7 +28,7 @@ h1, h2 {
 .section-title {
     color: #8B4513; /* Annar brúnn tónn (SaddleBrown) */
     border-bottom: 2px solid #dcdcdc; /* Lágstemmd lína undir til að aðgreina kafla */
-    padding-bottom: 5px; /* Smá bil á milli texta og línu */
+    padding-bottom: 45px; /* Smá bil á milli texta og línu */
 }
 
 /*
@@ -79,3 +79,4 @@ nav a {
     background-color: #8B4513; /* Dökkur bakgrunnur fyrir hausinn */
     color: white; /* Hvítur texti */
 }
+
