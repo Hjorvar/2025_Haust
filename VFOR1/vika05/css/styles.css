@@ -1,0 +1,87 @@
+/* Vika 5: Alhliða 'border-box' endurstilling. 
+   Þessi regla er grundvallaratriði í allri nútíma vefsmíði.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Vika 4: Grunnstílar á <body> */
+body {
+    background-color: #e9ecef; /* Annar ljósgrár litur */
+    color: #333;
+    font-family: 'Helvetica', Arial, sans-serif; /* Annað letur fyrir fjölbreytni */
+    line-height: 1.5;
+}
+
+/* Vika 5: Gámurinn fær hámarksbreidd og er miðjusettur.
+   Léttur skuggi gefur honum dýpt.
+*/
+.container {
+    max-width: 960px;
+    margin: 40px auto; /* 40px bil fyrir ofan/neðan, miðjusetja lárétt */
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+/* Vika 5: Notum padding til að gefa haus og fæti innra bil. */
+.page-header, .page-footer {
+    padding: 20px 30px;
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+}
+
+/* Vika 5: Meginmálið fær líka sitt eigið bil. */
+main {
+    padding: 30px;
+}
+
+/* Vika 4 & 5: Almennir stílar fyrir kafla-fyrirsagnir */
+.section-title {
+    color: #495057;
+    margin-top: 30px; /* Bil fyrir ofan hvern nýjan kafla */
+    margin-bottom: 15px; /* Bil fyrir neðan */
+}
+
+/* Vika 5: Box Model á vörumyndinni */
+.product-image {
+    display: block; /* Nauðsynlegt til að miðjusetja með margin */
+    max-width: 100%; /* Tryggir að myndin fari ekki út fyrir gáminn */
+    margin: 0 auto 30px; /* 0 bil á hliðum, miðjusetur. 30px bil fyrir neðan */
+    border: 8px solid #fff; /* Hvítur "rammi" */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+/* Vika 4 & 5: Stílar á töfluna til að gera hana læsilegri */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Línur falla saman */
+    margin-top: 15px;
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 12px; /* Dæmi um padding innan í reitum */
+    text-align: left;
+}
+
+th {
+    background-color: #f8f9fa;
+}
+
+/* Vika 4 & 5: Einfaldir stílar á formið */
+.quote-form input, .quote-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.quote-form button {
+    background-color: #005A9C;
+    color: white;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+}
