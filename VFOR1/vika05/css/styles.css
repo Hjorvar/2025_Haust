@@ -22,7 +22,7 @@ body {
     max-width: 960px;
     margin: 40px auto; /* 40px bil fyrir ofan/neðan, miðjusetja lárétt */
     background-color: #fff;
-    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    box-shadow: 0 0 55px rgba(0,0,0,0.05);
 }
 
 /* Vika 5: Notum padding til að gefa haus og fæti innra bil. */

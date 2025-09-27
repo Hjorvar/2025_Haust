@@ -80,7 +80,7 @@ SELECT
     v.vidskiptavinur_nafn,
     vo.voruheiti,
     pl.magn,
-    vo.einingaverd
+    vo.einingaverdx
 FROM pantanir_3nf p
 JOIN vidskiptavinir_3nf v ON p.vidskiptavinur_id = v.vidskiptavinur_id
 JOIN pontunarlinur_3nf pl ON p.pontun_id = pl.pontun_id
