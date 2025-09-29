@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Sýnikennsla</title>
+    <link rel="stylesheet" href="css/flex2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Flexbox Sýnikennsla</h1>
+        <p>Hér sjáum við áhrif helstu Flexbox eiginda á útlit.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Grunnurinn: <code>display: flex</code></h2>
+            <p>Um leið og við setjum <code>display: flex</code> á gráa kassann (container) raðast bláu kassarnir (items) lárétt.</p>
+            <div class="container">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Stefna á meginás: <code>flex-direction</code></h2>
+            <p><code>flex-direction: column</code> víxlar ásum. Meginásinn verður lóðréttur.</p>
+            <div class="container direction-column">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Röðun á meginás: <code>justify-content</code></h2>
+            <p>Þetta stýrir hvernig auka plássi er deilt á meginásnum (lárétt í þessu dæmi).</p>
+            
+            <h3 class="example-title"><code>justify-content: flex-start;</code> (sjálfgefið)</h3>
+            <div class="container justify-start">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+
+            <h3 class="example-title"><code>justify-content: center;</code></h3>
+            <div class="container justify-center">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+
+            <h3 class="example-title"><code>justify-content: space-between;</code></h3>
+            <div class="container justify-between">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Röðun á þverás: <code>align-items</code></h2>
+            <p>Þetta stýrir röðun á þverásnum (lóðrétt í þessu dæmi). Ílátið þarf að hafa hæð til að þetta sjáist.</p>
+
+            <h3 class="example-title"><code>align-items: flex-start;</code></h3>
+            <div class="container with-height align-start">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+
+            <h3 class="example-title"><code>align-items: center;</code></h3>
+            <div class="container with-height align-center">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+
+            <h3 class="example-title"><code>align-items: stretch;</code> (sjálfgefið)</h3>
+            <div class="container with-height align-stretch">
+                <div class="item no-height">1</div>
+                <div class="item no-height">2</div>
+                <div class="item no-height">3</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Að leyfa flæði: <code>flex-wrap</code></h2>
+            <p>Ef kassarnir komast ekki fyrir, flæða þeir yfir. <code>flex-wrap: wrap</code> leyfir þeim að fara í nýja línu.</p>
+            <div class="container wrap-example">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,112 @@
+/* --- Grunnstílar (ekki Flexbox) --- */
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    background-color: #f3f4f6;
+    color: #111827;
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #d1d5db;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #1e3a8a;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    color: #1e40af;
+}
+
+h3.example-title {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #374151;
+}
+
+code {
+    background-color: #e5e7eb;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+/* --- Stílar fyrir sýnidæmin --- */
+
+/* Stíll á "Flex Container" */
+.container {
+    background-color: #d1d5db;
+    border: 2px solid #9ca3af;
+    border-radius: 6px;
+    padding: 1rem;
+    
+    /* HÉR BYRJA TÖFRARNIR */
+    display: flex; [cite_start]/* [cite: 3780] */
+    
+    /* Sjálfgefið gildi sem við yfirskrifum svo í dæmunum */
+    flex-direction: row; [cite_start]/* [cite: 3788] */
+    justify-content: flex-start; [cite_start]/* [cite: 3796] */
+    align-items: stretch; [cite_start]/* [cite: 3812] */
+}
+
+/* Stíll á "Flex Items" */
+.item {
+    background-color: #3b82f6;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    border: 2px solid #2563eb;
+    text-align: center;
+    margin: 0.5rem; /* Margin notað hér svo kassarnir leggist ekki saman */
+    height: 100px; /* Gefum kössum hæð */
+}
+
+/* --- Eigindi sem við erum að sýna --- */
+
+/* Vika 7, Kafli 6.3: flex-direction */
+.direction-column {
+    flex-direction: column; [cite_start]/* [cite: 3789] */
+}
+
+/* Vika 7, Kafli 6.4: justify-content */
+.justify-start {
+    justify-content: flex-start; [cite_start]/* [cite: 3796] */
+}
+.justify-center {
+    justify-content: center; [cite_start]/* [cite: 3797] */
+}
+.justify-between {
+    justify-content: space-between; [cite_start]/* [cite: 3798] */
+}
+
+/* Vika 7, Kafli 6.5: align-items */
+.with-height {
+    height: 250px; /* Nauðsynlegt til að sjá lóðrétta röðun */
+}
+.align-start {
+    align-items: flex-start; [cite_start]/* [cite: 3815] */
+}
+.align-center {
+    align-items: center; [cite_start]/* [cite: 3817] */
+}
+.align-stretch {
+    align-items: stretch; [cite_start]/* [cite: 3812] */
+}
+.no-height {
+    height: auto; /* Fjarlægjum fasta hæð til að sýna stretch */
+}
+
+/* Vika 7, Kafli 6.6: flex-wrap */
+.wrap-example {
+    flex-wrap: wrap; [cite_start]/* [cite: 3831] */
+}

@@ -1,0 +1,133 @@
+/* --- Grunnstílar (ekki Flexbox) --- */
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    background-color: #f3f4f6;
+    color: #111827;
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #d1d5db;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #1e3a8a;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    color: #1e40af;
+}
+
+h3.example-title {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #374151;
+}
+
+code {
+    background-color: #e5e7eb;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+/* --- Stílar fyrir sýnidæmin --- */
+
+/* Stíll á "Flex Container" */
+.container {
+    background-color: #d1d5db;
+    border: 2px solid #9ca3af;
+    border-radius: 6px;
+    padding: 1rem;
+    
+    /* --- SKREF 1: GRUNNURINN ---
+    Fjarlægðu athugasemdina í kringum 'display: flex;' til að virkja Flexbox.
+    Þú munt sjá kassana raðast lárétt samstundis.
+    */
+    display: flex;
+}
+
+/* Stíll á "Flex Items" */
+.item {
+    background-color: #3b82f6;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    border: 2px solid #2563eb;
+    text-align: center;
+    margin: 0.5rem;
+    height: 100px;
+}
+
+
+/* --- Eigindi sem við erum að sýna --- */
+
+/* Vika 7, Kafli 6.3: flex-direction */
+.direction-column {
+    /* --- SKREF 2: STEFNA ---
+    Fjarlægðu athugasemdina til að sjá hvernig kassarnir raðast lóðrétt.
+    */
+    flex-direction: column;
+}
+
+/* Vika 7, Kafli 6.4: justify-content */
+.justify-start {
+    /* Þetta er sjálfgefið gildi, engin þörf á að af-kommenta. */
+    justify-content: flex-start;
+}
+.justify-center {
+    /* --- SKREF 3: RÖÐUN Á MEGINÁ;S ---
+    Fjarlægðu athugasemdina til að miðjusetja kassana.
+    */
+    justify-content: center;
+}
+.justify-between {
+    /* --- SKREF 4: RÖÐUN Á MEGINÁS ---
+    Fjarlægðu athugasemdina til að setja jafnt bil á milli.
+    */
+    justify-content: space-between;
+}
+
+/* Vika 7, Kafli 6.5: align-items */
+.with-height {
+    height: 250px;
+}
+.align-start {
+    /* --- SKREF 5: RÖÐUN Á ÞVERÁS ---
+    Fjarlægðu athugasemdina til að ýta kössunum upp.
+    */
+    align-items: flex-start;
+}
+.align-center {
+    /* --- SKREF 6: RÖÐUN Á ÞVERÁS ---
+    Fjarlægðu athugasemdina til að miðjusetja kassana lóðrétt.
+    */
+    align-items: center;
+
+}
+.align-stretch {
+    /* Þetta er sjálfgefið gildi, en virkar aðeins ef 'item' hefur ekki fasta hæð. */
+    align-items: stretch;
+}
+.no-height {
+    height: auto;
+}
+
+/* Vika 7, Kafli 6.6: flex-wrap */
+.wrap-example {
+    /* --- SKREF 7: FLÆÐI ---
+    Gefðu fleiri kössum í HTML skránni eða minnkaðu vafragluggann.
+    Fjarlægðu svo athugasemdina til að leyfa þeim að færast í nýja línu.
+    */
+    flex-wrap: wrap;
+}

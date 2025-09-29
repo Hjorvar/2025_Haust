@@ -1,0 +1,129 @@
+/* --- Vika 5: Universal border-box reset --- */
+/* Tryggir að padding og border séu innifalin í heildarbreidd/hæð. */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* --- Vika 4: Grunnstílar --- */
+body {
+    background-color: #111827; /* Dökkur bakgrunnur */
+    color: #E5E7EB; /* Ljósgrár texti */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Vika 5: Miðjusetning á aðalinnihaldi --- */
+.main-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Vika 4: Stílar á fyrirsagnir --- */
+.page-title {
+    color: #93c5fd; /* Ljósblár */
+    text-align: center;
+    font-size: 2.5rem; /* Stærra letur */
+}
+
+.section-title {
+    color: #a5b4fc; /* Ljósfjólublár */
+    border-bottom: 2px solid #4f46e5;
+    padding-bottom: 10px;
+    margin-top: 40px;
+}
+
+/* --- Vika 7: Flexbox fyrir haus og valmynd --- */
+.page-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.main-nav {
+    display: flex;
+    gap: 30px; /* Bil á milli hlekkja */
+    margin-top: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #d1d5db;
+    font-weight: 500;
+}
+
+/* --- Vika 7: Flexbox fyrir inngangskafla --- */
+.intro-section {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Stærra bil */
+}
+
+.intro-text {
+    flex: 1; /* Leyfir textanum að taka það pláss sem er í boði */
+}
+
+/* --- Vika 5: Stílar fyrir mynd með Box Model eigindum --- */
+.profile-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #4f46e5; /* Litaður rammi */
+}
+
+/* --- Vika 5: Stílar fyrir töflu --- */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Fjarlægir tvöfalda ramma */
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #374151;
+    text-align: left;
+}
+
+thead {
+    background-color: #374151; /* Dökkur haus á töflu */
+}
+
+/* --- Vika 5: Stílar fyrir form --- */
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #1f2937;
+    border: 1px solid #4b5563;
+    color: #E5E7EB;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* --- Vika 5: Stíll á fót --- */
+.page-footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #374151;
+    color: #6b7280;
+}
