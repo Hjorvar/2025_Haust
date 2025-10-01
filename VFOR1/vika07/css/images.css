@@ -1,0 +1,71 @@
+/* --- Grunnstílar (ekki Flexbox) --- */
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    background-color: #f3f4f6;
+    color: #111827;
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #d1d5db;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #1e3a8a;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    color: #1e40af;
+}
+
+code {
+    background-color: #e5e7eb;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+/* --- Stílar fyrir sýnidæmin --- */
+
+/* Stíll á "Flex Container" */
+.container {
+    background-color: #d1d5db;
+    border: 2px solid #9ca3af;
+    border-radius: 6px;
+    padding: 1rem;
+    display: flex; /* Flexbox virkjað */
+    gap: 1rem; /* Nútímaleg leið til að búa til bil milli flex-hluta */
+}
+
+/* Stíll á "Flex Items" - núna sem myndarammar */
+.item {
+    height: 150px; /* Höldum fastri hæð til að línurnar séu jafnar */
+    border-radius: 4px;
+    border: 2px solid #2563eb;
+    margin: 0; /* Fjarlægjum margin þar sem við notum 'gap' á container */
+    overflow: hidden; /* Fela þann hluta myndar sem flæðir út fyrir */
+    background-color: #3b82f6; /* Sést ef myndin hleðst ekki inn */
+
+    /* Látum hlutinn vera sveigjanlegan */
+    flex: 1 1 150px;
+}
+
+/* Stíll fyrir myndirnar inni í flex-hlutunum */
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mikilvægasta eigindið: fyllir kassann án þess að skekkjast */
+    display: block; /* Fjarlægir smá bil sem getur myndast undir myndum */
+}
+
+
+/* flex-wrap eigindið sem dæmið snýst um */
+.wrap-example {
+    flex-wrap: wrap; /* Leyfir myndum að fara í nýja línu */
+}

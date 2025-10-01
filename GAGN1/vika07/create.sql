@@ -33,3 +33,4 @@ CREATE TABLE pizzaIngredients (
     idIngredients INTEGER
 );
 
+DROP TABLE pizzas;

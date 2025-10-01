@@ -1,0 +1,54 @@
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    background-color: #f3f4f6;
+    color: #111827;
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #d1d5db;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #1e3a8a;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    color: #1e40af;
+}
+
+code {
+    background-color: #e5e7eb;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.container {
+    background-color: #d1d5db;
+    border: 2px solid #9ca3af;
+    border-radius: 6px;
+    padding: 1rem;
+    display: flex; /* Flexbox virkjað */
+    gap: 1rem;
+}
+
+.item {
+    height: 150px; /* Höldum fastri hæð til að línurnar séu jafnar */
+    border-radius: 4px;
+    border: 2px solid #2563eb;
+    margin: 0; /* Fjarlægjum margin þar sem við notum 'gap' á container */
+    overflow: hidden; /* Fela þann hluta myndar sem flæðir út fyrir */
+    background-color: #3b82f6; /* Sést ef myndin hleðst ekki inn */
+    flex: 1 1 150px;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
