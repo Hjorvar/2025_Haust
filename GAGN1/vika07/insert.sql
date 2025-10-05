@@ -23,3 +23,12 @@ FROM pizzas INNER JOIN pizzaIngredients
 ON pizzas.id = pizzaIngredients.idPizza
 INNER JOIN ingredients
 ON pizzaIngredients.idIngredients = ingredients.id;
+
+
+INSERT INTO customers (firstName, lastName, email, phone, address)
+VALUES ('Jón', 'Sigurðsson', 'js@fb.is', '5554950', 'Beljuland 10'),
+('Karl', 'Magnússson', 'km@fb.is', '5552487', 'Dúfnahólar 10'),
+('Hjörvar Ingi', 'Haraldsson', 'hih@fb.is', '5552343', 'Kirkjustræti 11');
+
+INSERT INTO pizzaOrders(idCustomer, idPizza)
+VALUES (2, 3);
