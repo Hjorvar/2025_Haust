@@ -1,0 +1,126 @@
+/* =================================
+   Grunnstillingar & Mobile-First
+   ================================= */
+
+/* Alhliða box-sizing regla kennd í kafla 5 [cite: 500, 504] */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+    /* Grid fyrir heildarskipulag (Kafli 7) [cite: 896] */
+    display: grid;
+    grid-template-columns: 1fr; /* Ein dálkur fyrir farsíma */
+    grid-template-areas:
+        "haus"
+        "adalinneign"
+        "fotur";
+    gap: 20px; /* Bil á milli svæða [cite: 944] */
+}
+
+/* Útlitsstílar fyrir Grid svæði */
+.haus { grid-area: haus; text-align: center; }
+.adalinneign { grid-area: adalinneign; }
+.fotur { grid-area: fotur; text-align: center; padding: 20px 0; border-top: 1px solid #ddd; }
+
+
+h1, h2, h3 {
+    margin: 0 0 1rem 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Valmynd - Notum Flexbox (Kafli 6) [cite: 656] */
+.valmynd {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Staflað lóðrétt á farsíma */
+    align-items: center;
+    gap: 10px;
+}
+
+.hero {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.um-okkur {
+    padding: 20px 0;
+}
+
+.um-okkur-mynd {
+    margin-top: 20px;
+}
+
+/* =================================
+   Stærri skjáir (Tablet & Desktop)
+   ================================= */
+
+/* Media Query fyrir svaranlega hönnun (Kafli 7) [cite: 982] */
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 960px;
+        /* Breyta Grid skipulagi fyrir breiðari skjái [cite: 907] */
+        grid-template-columns: 1fr 200px; /* Tveir dálkar: meginmál og hliðarstika (tóm) */
+        grid-template-areas:
+            "haus haus"
+            "adalinneign adalinneign"
+            "fotur fotur";
+    }
+
+    .haus {
+        display: flex; /* Notum Flexbox til að raða logo og valmynd */
+        justify-content: space-between; /* Ýtir hlutum í sitt hvorn endann [cite: 697] */
+        align-items: center;
+        text-align: left;
+    }
+
+    .valmynd {
+        flex-direction: row; /* Lárétt valmynd fyrir breiðari skjái [cite: 687] */
+        gap: 20px;
+    }
+
+    /* Búum til tveggja dálka útlit fyrir "Um okkur" hlutann með Grid */
+    .um-okkur {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .um-okkur-mynd {
+        margin-top: 0;
+    }
+}
