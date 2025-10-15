@@ -1,0 +1,42 @@
+#container {
+    border: 3px solid red;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: 
+        "header header"
+        "nav main"
+        "side main"
+        "side main"
+        "footer footer";
+}
+
+#main-header {
+    background-color: gray;
+    text-align: center;
+    grid-area: header;
+}
+
+#navigation {
+    background-color: darkviolet;
+    text-align: center;
+    grid-area: nav;
+}
+
+#main-content {
+    background-color: navy;
+    text-align: center;
+    color:aliceblue;
+    grid-area: main;
+}
+
+#sidebar {
+    background-color: coral;
+    text-align: center;
+    grid-area: side;
+}
+
+#main-footer {
+    background-color: aqua;
+    text-align: center;
+    grid-area: footer;
+}

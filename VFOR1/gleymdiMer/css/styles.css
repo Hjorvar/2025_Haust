@@ -1,0 +1,42 @@
+#main-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: 
+        "header header"
+        "nav main"
+        "sidebar main"
+        "sidebar main"
+        "ads main"
+        "footer footer"
+        ;
+}
+
+#main-header {
+    background-color: green;
+    grid-area: header;
+}
+
+#navigation {
+    background-color: cadetblue;
+    grid-area: nav;
+}
+
+#sidebar {
+    background-color: red;
+    grid-area: sidebar;
+}
+
+#ads {
+    background-color: yellow;
+    grid-area: ads;
+}
+
+#main-content {
+    background-color: brown;
+    grid-area: main;
+}
+
+#main-footer {
+    background-color: blue;
+    grid-area: footer;
+}
