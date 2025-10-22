@@ -1,0 +1,136 @@
+/* --- Almennt útlit (CSS) --- */
+:root {
+    --primary-color: #004a99;
+    --secondary-color: #f1f1f1;
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --accent-color: #d73c3c;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/*
+ * --- NOTKUN Á CSS GRID ---
+ * Við notum Grid til að stjórna heildarskipulagi efniskortanna.
+*/
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/*
+ * --- NOTKUN Á CSS FLEXBOX (í kortunum) ---
+ * Við notum Flexbox til að stjórna innra skipulagi hvers korts.
+*/
+.card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+ * --- MEIRI FLEXBOX NOTKUN ---
+ * Hér notum við Flexbox til að raða táknmynd og fyrirsögn snyrtilega.
+*/
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.card-header .icon {
+    font-size: 2rem;
+}
+
+.verkefni {
+    background-color: #eef5ff;
+    border-left: 5px solid var(--primary-color);
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: auto; /* Þrýstir boxinu neðst í kortinu */
+}
+
+/* --- Spurningakeppni og takkar --- */
+.quiz-question {
+    margin-bottom: 15px;
+}
+
+.quiz-question input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#quiz-results p {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.correct {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.incorrect {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: #777;
+}

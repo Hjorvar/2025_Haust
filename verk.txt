@@ -1,0 +1,12 @@
+Hafið öll breytunöfn á ensku, ekki íslensku
+Hafið const fyrir framan allar breytur þegar þið búið til
+
+Búið til HTML skjal, þarf ekki að hafa neitt nema tengingu við Javascript skjalið.
+
+Þetta á að búa til í javascript skjalið:
+1. Búa til breytu sem geymir nöfn
+2. Búið til breytu sem geymir verð
+3. Búið til breytu sem geymir hvort notandi sé admin
+4. Búið til breytu sem hefur nafn sem er meira en eitt orð
+
+Setjið gildi í allar breyturnar

@@ -32,3 +32,69 @@ VALUES ('Jón', 'Sigurðsson', 'js@fb.is', '5554950', 'Beljuland 10'),
 
 INSERT INTO pizzaOrders(idCustomer, idPizza)
 VALUES (2, 3);
+
+-- Bætum við fleiri hráefnum fyrir fjölbreyttari pítsur
+INSERT INTO ingredients (name, portionSize, price, isVegan)
+VALUES 
+('skinka', 40, 350, FALSE),
+('ananas', 30, 200, TRUE),
+('hreindýrakjöt', 50, 800, FALSE),
+('rjómaostur', 30, 250, FALSE),
+('sultutau', 15, 150, TRUE),
+('rækjur', 40, 400, FALSE),
+('hvítlauksolía', 10, 100, TRUE);
+
+-- Bætum við þremur nýjum pítsum í vöruúrvalið
+INSERT INTO pizzas (name, description, price)
+VALUES 
+('Hawaii', 'Hin sígilda með skinku og ananas', 5500),
+('Hreindýraveisla', 'Sérréttur hússins með hreindýrakjöti, rjómaosti og sultu', 7500),
+('Sjávarrétta', 'Með rækjum og hvítlauksolíu', 6200);
+
+-- Fyrst klárum við "Pepparoni veisla" (pizza með id=2)
+INSERT INTO pizzaIngredients (idPizza, idIngredients)
+VALUES 
+(2, 1), -- pizza sósan
+(2, 2), -- ostur
+(2, 3); -- pepparóní
+
+-- Tengjum hráefni við nýju pítsurnar
+-- Hawæi (pizza með id=4)
+INSERT INTO pizzaIngredients (idPizza, idIngredients)
+VALUES 
+(5, 1), -- pizza sósan
+(5, 2), -- ostur
+(5, 7), -- skinka
+(5, 8); -- ananas
+
+-- Hreindýraveisla (pizza með id=5)
+INSERT INTO pizzaIngredients (idPizza, idIngredients)
+VALUES 
+(6, 9),  -- hreindýrakjöt
+(6, 10), -- rjómaostur
+(6, 11); -- sultutau
+
+-- Sjávarrétta (pizza með id=6)
+INSERT INTO pizzaIngredients (idPizza, idIngredients)
+VALUES 
+(7, 2),  -- ostur
+(7, 12), -- rækjur
+(7, 13); -- hvítlauksolía
+
+SELECT * FROM pizzas;
+
+-- Bætum við tveimur nýjum viðskiptavinum
+INSERT INTO customers (firstName, lastName, email, phone, address)
+VALUES 
+('Guðrún', 'Jónsdóttir', 'gj@fb.is', '5558888', 'Blómsturvellir 2'),
+('Pétur', 'Pálsson', 'pp@fb.is', '5559999', 'Lautarvegur 19');
+
+-- Bætum við fleiri pöntunum til að fylla gagnagrunninn
+INSERT INTO pizzaOrders(idCustomer, idPizza)
+VALUES 
+(1, 1), -- Jón pantar Margaritu
+(3, 2), -- Hjörvar pantar Pepparoni veislu
+(4, 4), -- Guðrún pantar Hawæi
+(5, 5), -- Pétur pantar Hreindýraveislu
+(1, 3), -- Jón pantar líka Vegan veislu
+(2, 6); -- Karl pantar Sjávarrétta

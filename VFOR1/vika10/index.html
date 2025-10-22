@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stóra Vika 10 (Aðskildar skrár)</title>
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Stóra Vika 10</h1>
+        <p>Sýnidæmi með CSS Grid og Flexbox!</p>
+    </header>
+
+    <main class="container">
+        
+        <div class="card-grid">
+            
+            <section class="card">
+                <div class="card-header">
+                    <span class="icon">🥐</span>
+                    <h2>Bolludagur</h2>
+                </div>
+                <p>Bolludagurinn er sannkallaður sælkeradagur! Þá borðum við ljúffengar bollur fylltar með sultu og rjóma. Hefð er fyrir því að börn útbúi <strong>bolluvönd</strong>.</p>
+                <div class="verkefni">
+                    <h3>Verkefni dagsins:</h3>
+                    <p>Prófaðu að baka þínar eigin bollur! Finndu góða uppskrift á netinu.</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="card-header">
+                    <span class="icon">🍲</span>
+                    <h2>Sprengidagur</h2>
+                </div>
+                <p>Á þriðeginum borðum við saltkjöt og baunasúpu þar til við erum við það að springa! Þetta var síðasti kjötskammturinn fyrir lönguföstu.</p>
+                <div class="verkefni">
+                    <h3>Orð dagsins:</h3>
+                    <p><strong>Að springa úr mettun.</strong> Þetta þýðir að vera svo saddur að manni líður eins og maður sé að springa.</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="card-header">
+                    <span class="icon">🎭</span>
+                    <h2>Öskudagur</h2>
+                </div>
+                <p>Öskudagur er íslenska Hrekkjavakan! Börn klæða sig í búninga, heimsækja fyrirtæki og syngja lög í skiptum fyrir nammi.</p>
+                <div class="verkefni">
+                    <h3>Verkefni dagsins:</h3>
+                    <p>Lærðu einfaldan öskudagssöng til að syngja fyrir nammi!</p>
+                </div>
+            </section>
+
+        </div> <section class="card" style="margin-top: 30px;">
+            <h2>Prófaðu þekkingu þína!</h2>
+            <form id="quiz-form">
+                <div class="quiz-question">
+                    <label for="q1">Hvað notar maður til að vekja fólk á Bolludag?</label>
+                    <input type="text" id="q1" name="q1">
+                </div>
+                <div class="quiz-question">
+                    <label for="q2">Hvað borðar maður á Sprengidag?</label>
+                    <input type="text" id="q2" name="q2">
+                </div>
+                <div class="quiz-question">
+                    <label for="q3">Hvað gera börn til að fá nammi á Öskudag?</label>
+                    <input type="text" id="q3" name="q3">
+                </div>
+                <button type="button" onclick="checkAnswers()">Senda svör</button>
+            </form>
+            <div id="quiz-results" style="margin-top: 20px;"></div>
+        </section>
+
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 - Sýnidæmi um kennsluvef fyrir Viku 10</p>
+    </footer>
+
+</body>
+</html>
