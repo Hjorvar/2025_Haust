@@ -1,0 +1,38 @@
+/* ---- Grunnstillingar og Box Model (Vika 4 & 5) ---- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Alhliða border-box reset [cite: 2005] */
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+}
+
+/* ---- Flexbox til að miðjusetja (Vika 7) ---- */
+.container {
+    max-width: 800px;
+    margin: 40px auto; /* Notar margin auto til að miðjusetja [cite: 2814] */
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+header {
+    text-align: center;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #0056b3;
+}
+
+strong {
+    color: #d9534f;
+}
