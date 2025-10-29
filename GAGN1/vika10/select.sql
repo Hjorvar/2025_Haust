@@ -52,7 +52,7 @@ INNER JOIN
 SELECT
     c.firstName,
     c.lastName,
-    COUNT(po.id) AS totalOrders
+    COUNT(*) AS totalOrders
 FROM
     customers c
 INNER JOIN
@@ -78,15 +78,15 @@ ORDER BY
 SELECT
     c.firstName,
     c.lastName,
-    COUNT(po.id) AS totalOrders
+    COUNT(*) AS totalOrders
 FROM
     customers c
 INNER JOIN
     pizzaOrders po ON c.id = po.idCustomer
 GROUP BY
-    c.id, c.firstName, c.lastName
+    c.id
 HAVING
-    COUNT(po.id) > 1;
+    COUNT(*) > 1;
 
 
 
@@ -112,6 +112,36 @@ INNER JOIN
 INNER JOIN
     ingredients i ON pi.idIngredients = i.id
 GROUP BY
-    p.id, p.name, p.price
+    p.id
 ORDER BY
     p.name;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT 
+    p_outer.name,
+    p_outer.price,
+    (
+        SELECT 
+            ROUND(AVG(p_inner.price), 0) 
+        FROM 
+            pizzas p_inner 
+        WHERE 
+            p_inner.id != p_outer.id
+    ) AS averagePriceOfOtherPizzas
+FROM 
+    pizzas p_outer
+ORDER BY
+    p_outer.price DESC;
