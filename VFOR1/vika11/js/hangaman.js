@@ -6,19 +6,57 @@ const figureParts = document.querySelectorAll('.figure-part');
 const gameMessage = document.querySelector('#game-message');
 const resetButton = document.querySelector('#reset-button');
 
-const wordList = [  
-                    "FORRITUN", 
-                    "VEFSÍÐA", 
-                    "TÖLVA", 
-                    "KENNARI", 
-                    "NEMANDI", 
-                    "JAVASCRIPT", 
-                    "STYLESHEET", 
-                    "MARKUP", 
-                    "VIÐMÓT", 
-                    "NOTANDI"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const wordList = [ 
+                    "FORRITUN", "VEFSÍÐA", 
+                    "TÖLVA", "KENNARI", 
+                    "NEMANDI", "JAVASCRIPT", 
+                    "STYLESHEET", "MARKUP", 
+                    "VIÐMÓT", "NOTANDI"
                 ];
        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const MAX_MISTAKES = 6;
 
 let currentWord = '';
