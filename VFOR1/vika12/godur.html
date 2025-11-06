@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="is">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nútíma Myndasafnið</title>
+    <link rel="stylesheet" href="css/godur.css" />
+    <script src="js/godur.js" defer></script>
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>Nútíma Myndasafnið</h1>
+    </header>
+
+    <div class="layout-container">
+      <main class="main-content">
+        <h2>Nýjustu Myndirnar</h2>
+        <div class="gallery-container" id="gallery-container">
+          </div>
+      </main>
+
+      <aside class="sidebar">
+        <h3>Bæta við mynd</h3>
+        <form class="sidebar-form" id="add-picture-form">
+          <div class="form-group">
+            <label for="img-title">Titill:</label>
+            <input type="text" id="img-title" name="img-title" required />
+          </div>
+          <div class="form-group">
+            <label for="img-url">Slóð:</label>
+            <input type="url" id="img-url" name="img-url" required />
+          </div>
+          <button type="submit" class="btn">Bæta við</button>
+        </form>
+      </aside>
+    </div>
+
+    <footer class="page-footer">
+      <p>&copy; 2025 Allur réttur áskilinn</p>
+    </footer>
+  </body>
+</html>
