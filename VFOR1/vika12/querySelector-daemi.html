@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nútímalegt Dæmi með querySelector</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(245, 87, 108, 0.4);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(79, 172, 254, 0.4);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(250, 112, 154, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .output {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            min-height: 100px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .output p {
+            margin: 10px 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .output .message {
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .counter {
+            text-align: center;
+            font-size: 48px;
+            font-weight: bold;
+            color: #667eea;
+            margin: 20px 0;
+        }
+
+        .code-example {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 querySelector Dæmi</h1>
+        <p class="subtitle">Nútímaleg og sveigjanleg aðferð!</p>
+        
+        <div class="button-group">
+            <!-- Dæmi 1: Velja með ID -->
+            <button id="hnappur1" class="btn-primary">
+                #ID Selector
+            </button>
+
+            <!-- Dæmi 2: Velja með class -->
+            <button class="special-button btn-secondary">
+                .Class Selector
+            </button>
+
+            <!-- Dæmi 3: Velja með attribute -->
+            <button class="btn-success" data-action="fetch">
+                [attribute] Selector
+            </button>
+
+            <!-- Dæmi 4: Velja alla hnappa af ákveðinni tegund -->
+            <button class="btn-danger toggle-btn">
+                QuerySelectorAll
+            </button>
+        </div>
+
+        <div class="counter" id="teljari">0</div>
+
+        <div class="output" id="output">
+            <p><strong>📋 Úttakssvæði:</strong></p>
+            <p>Smelltu á hnappa til að sjá mismunandi querySelector dæmi...</p>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // AÐFERÐ 1: querySelector með ID
+        // ============================================
+        // Notum # eins og í CSS!
+        const hnappur1 = document.querySelector('#hnappur1');
+        hnappur1.addEventListener('click', () => {
+            bætaVíðSkilaboðum('🎯 Valið með <strong>querySelector("#hnappur1")</strong>');
+            sýnaKóða('const hnappur = document.querySelector("#hnappur1");');
+        });
+
+        // ============================================
+        // AÐFERÐ 2: querySelector með CLASS
+        // ============================================
+        // Notum . eins og í CSS!
+        const hnappur2 = document.querySelector('.special-button');
+        hnappur2.addEventListener('click', () => {
+            bætaVíðSkilaboðum('✨ Valið með <strong>querySelector(".special-button")</strong>');
+            sýnaKóða('const hnappur = document.querySelector(".special-button");');
+        });
+
+        // ============================================
+        // AÐFERÐ 3: querySelector með ATTRIBUTE
+        // ============================================
+        // Virkar með öllum CSS selectors!
+        const hnappur3 = document.querySelector('button[data-action="fetch"]');
+        hnappur3.addEventListener('click', () => {
+            bætaVíðSkilaboðum('🔍 Valið með <strong>querySelector(\'button[data-action="fetch"]\')</strong>');
+            sýnaKóða('const hnappur = document.querySelector(\'button[data-action="fetch"]\');');
+        });
+
+        // ============================================
+        // AÐFERÐ 4: querySelectorAll fyrir MARGA
+        // ============================================
+        // Fær alla hnappa með ákveðnum class
+        const hnappur4 = document.querySelector('.toggle-btn');
+        hnappur4.addEventListener('click', () => {
+            // Finna alla hnappa
+            const allirHnappar = document.querySelectorAll('button');
+            bætaVíðSkilaboðum(`📚 Fann <strong>${allirHnappar.length} hnappa</strong> með querySelectorAll!`);
+            
+            // Dæmi: Breyta lit á öllum hnöppum í 2 sek
+            allirHnappar.forEach(btn => {
+                btn.style.opacity = '0.5';
+            });
+            
+            setTimeout(() => {
+                allirHnappar.forEach(btn => {
+                    btn.style.opacity = '1';
+                });
+            }, 2000);
+            
+            sýnaKóða('const allir = document.querySelectorAll("button");\nallir.forEach(btn => { /* gera eitthvað */ });');
+        });
+
+        // ============================================
+        // FLEIRI GAGNLEG DÆMI
+        // ============================================
+
+        // Dæmi 5: Finna fyrsta button innan ákveðins div
+        const container = document.querySelector('.button-group');
+        const fyrstiHnappur = container.querySelector('button');
+        console.log('Fyrsti hnappur:', fyrstiHnappur);
+
+        // Dæmi 6: Flóknari CSS selectors
+        // const oddHnappar = document.querySelectorAll('button:nth-child(odd)');
+        // const sidariHnappur = document.querySelector('button:last-child');
+
+        // Dæmi 7: Sameina selectors
+        // const hnappur = document.querySelector('button.btn-primary[id="hnappur1"]');
+
+        // ============================================
+        // HJÁLPARFÖLL
+        // ============================================
+
+        function bætaVíðSkilaboðum(texti) {
+            const output = document.querySelector('#output');
+            const tími = new Date().toLocaleTimeString('is-IS');
+            
+            const message = document.createElement('div');
+            message.className = 'message';
+            message.innerHTML = `<strong>${tími}:</strong> ${texti}`;
+            
+            output.appendChild(message);
+            output.scrollTop = output.scrollHeight;
+
+            // Uppfæra teljara
+            const teljari = document.querySelector('#teljari');
+            teljari.textContent = parseInt(teljari.textContent) + 1;
+        }
+
+        function sýnaKóða(kóði) {
+            const output = document.querySelector('#output');
+            const codeBlock = document.createElement('div');
+            codeBlock.className = 'code-example';
+            codeBlock.textContent = kóði;
+            output.appendChild(codeBlock);
+            output.scrollTop = output.scrollHeight;
+        }
+
+        // ============================================
+        // EVENT DELEGATION - Mjög öflug aðferð!
+        // ============================================
+        // Einn listener fyrir ALLA hnappa
+        document.addEventListener('click', (event) => {
+            // Athuga hvort smellt var á hnapp
+            const hnappur = event.target.closest('button');
+            if (hnappur) {
+                console.log('Smellt á:', hnappur.className);
+            }
+        });
+
+        // ============================================
+        // ÞEGAR SÍÐA HLEÐST
+        // ============================================
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('🚀 Síða tilbúin!');
+            console.log('💡 Allir selectors nota querySelector/querySelectorAll');
+            
+            bætaVíðSkilaboðum('🎉 Forrit keyrir! Allir hnappar nota <strong>querySelector</strong>');
+        });
+
+        // ============================================
+        // SAMANBURÐUR: getElementById vs querySelector
+        // ============================================
+        console.log('=== SAMANBURÐUR ===');
+        console.log('Gömul leið:', document.getElementById('hnappur1'));
+        console.log('Ný leið:', document.querySelector('#hnappur1'));
+        console.log('===================');
+    </script>
+</body>
+</html>
