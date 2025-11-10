@@ -1,0 +1,90 @@
+/* Nútímalegar grunnstillingar og breytur */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Alhliða box-model stilling */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+}
+
+/* Nútíma útlit fyrir takka með Flexbox */
+.stjornbord {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Nútíma leið til að hafa bil á milli hluta */
+    margin-bottom: 2rem;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Gámur fyrir listann */
+.listi-gamar {
+    display: flex;
+    flex-wrap: wrap; /* Lætur kort raðast í nýja línu ef plássið er búið */
+    gap: 1.5rem;
+}
+
+/* Stíll fyrir hvert starfsmannakort */
+.starfsmanna-kort {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    flex-basis: 250px; /* Hvert kort reynir að vera 250px breitt */
+    flex-grow: 1; /* Kortin stækka til að fylla upp í plássið */
+}
+
+.starfsmanna-kort h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.starfsmanna-kort p {
+    color: var(--secondary-color);
+}
+
+/* Aukaklassi sem við bætum við með IF setningu í JS */
+.kort-throun {
+    border-left: 5px solid #28a745; /* Grænn litur fyrir þróunardeild */
+}
