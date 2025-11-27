@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nýskráning</title>
+    <script src="js/auth.js" defer></script>
+</head>
+<body>
+    <h1>Nýskráning</h1>
+
+    <form id="register-form">
+        
+        <p id="message" style="color: red;"></p>
+
+        <div>
+            <label for="reg-username">Notandanafn:</label>
+            <input type="text" id="reg-username" name="username" required>
+        </div>
+
+        <div>
+            <label for="reg-password">Lykilorð:</label>
+            <input type="password" id="reg-password" name="password" required>
+        </div>
+
+        <div>
+            <button type="submit">Nýskrá mig</button>
+        </div>
+        
+        <p>Ertu nú þegar með aðgang? <a href="login.html">Innskráning</a></p>
+    </form>
+</body>
+</html>

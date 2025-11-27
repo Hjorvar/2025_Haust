@@ -1,0 +1,63 @@
+/* Almenn uppsetning - Bók 2, Kafli 5 */
+* {
+    box-sizing: border-box; /* Universal border-box reset [cite: 3606] */
+}
+
+body {
+    font-family: sans-serif; /* Bók 2, Kafli 4 [cite: 3323] */
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto; /* Miðjusetning með margin [cite: 3549] */
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- Kjarninn í lausninni --- */
+
+/* 1. Felum gátreitinn sjálfan svo hann sjáist ekki */
+.toggle-checkbox {
+    display: none; /*  */
+}
+
+/* 2. Stílum label-ið þannig að það líti út eins og takki */
+.toggle-button {
+    display: inline-block;
+    background-color: #4682B4; /* SteelBlue */
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    user-select: none; /* Kemur í veg fyrir að textinn sé valinn */
+}
+
+.toggle-button:hover {
+    background-color: #36648B;
+}
+
+/* 3. Sjálfgefið ástand: Formið er falið */
+.form-box {
+    display: none; /* Boxið er ósýnilegt og tekur ekkert pláss  */
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+}
+
+/* 4. Galdurinn: Þegar hakað er í checkboxið (:checked), 
+   birtum við .form-box sem kemur á eftir því (~) */
+.toggle-checkbox:checked ~ .form-box {
+    display: block; /* Birtir boxið aftur */
+}
+
+/* Breyta texta á takka (valfrjálst en sniðugt) */
+.toggle-checkbox:checked ~ .toggle-button {
+    background-color: #e74c3c; /* Rauður þegar opið */
+}
+.toggle-checkbox:checked ~ .toggle-button::after {
+    content: " (Loka)";
+}
